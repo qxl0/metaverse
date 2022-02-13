@@ -3,7 +3,7 @@ import { useMoralis } from 'react-moralis'
 import Login from '../components/Login'
 
 export default function Home() {
-  const { isAuthenticated } = useMoralis()
+  const { isAuthenticated, logout } = useMoralis()
 
   if (!isAuthenticated) return <Login />
   return (
@@ -14,6 +14,7 @@ export default function Home() {
       </Head>
 
       <h1>Welcome to metaverse</h1>
+      <button onClick={logout}>Logout</button>
     </div>
   )
 }
