@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { ByMoralis, useMoralis, useMoralisQuery } from 'react-moralis'
 import SendMessage from './SendMessage'
+import Message from './Message'
 
 const MINS_DURATION = 15
 function Messages() {
@@ -31,7 +32,7 @@ function Messages() {
         />
       </div>
 
-      <div>
+      <div className="space-y-10 p-4">
         {/* messages */}
         {data.map((message) => (
           <Message key={message.id} message={message} />
