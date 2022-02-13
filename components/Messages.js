@@ -1,4 +1,5 @@
 import { ByMoralis, useMoralis, useMoralisQuery } from 'react-moralis'
+import SendMessage from './SendMessage'
 
 function Messages() {
   const { user } = useMoralis()
@@ -12,6 +13,9 @@ function Messages() {
         />
       </div>
 
+      <div className="flex justify-center">
+        <SendMessage />
+      </div>
       <div className="mt-5 text-center text-gray-400">
         <p>You're up to date {user.getUsername()}! 🍢</p>
       </div>
