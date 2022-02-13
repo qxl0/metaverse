@@ -2,9 +2,22 @@ import { useState } from 'react'
 import { useMoralis } from 'react-moralis'
 
 function SendMessage() {
-  const { user } = useMoralis()
+  const { user, Moralis } = useMoralis()
   const [message, setMessage] = useState('')
-  const sendMessage = () => {}
+  const sendMessage = (e) => {
+    e.preventDefault()
+
+    if (!message) return
+
+    const Messages = Moralis.Object.extend('Messages')
+    const messages = new Messages()
+
+    messages.save({
+      message: message,
+      username: user.getUsername(),
+      ethAddress: user.get('ethAddress'),
+    })
+  }
   return (
     <form
       className="opacity-full fixed bottom-10 flex w-11/12 max-w-2xl
