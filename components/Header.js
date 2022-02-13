@@ -8,8 +8,8 @@ function Header() {
   const { user } = useMoralis()
 
   return (
-    <div className="text-pink-500">
-      <div className="">
+    <div className="sticky top-0 z-50 border-b-2 border-pink-700 bg-black p-5 text-pink-500 shadow-sm">
+      <div className="grid grid-cols-5 items-end lg:grid-cols-6 lg:items-center">
         <div className="relative mx-auto hidden h-24 w-24 lg:inline-grid">
           <Image
             src="https://links.papareact.com/3pi"
@@ -19,7 +19,7 @@ function Header() {
           />
         </div>
 
-        <div>
+        <div className="col-span-4 text-left lg:text-center">
           <div className="relative h-48 w-48 rounded-full border-8 border-pink-500 lg:mx-auto">
             <Avatar logoutOnPress={true} />
           </div>
