@@ -8,7 +8,10 @@ export default function Home() {
 
   if (!isAuthenticated) return <Login />
   return (
-    <div className="overflow-y h-screen overflow-y-scroll bg-gradient-to-b from-black to-fuchsia-900">
+    <div
+      className="overflow-y h-screen overflow-hidden 
+      overflow-y-scroll bg-gradient-to-b from-black to-fuchsia-900"
+    >
       <Head>
         <title>My Metaverse</title>
         <link rel="icon" href="/favicon.ico" />
